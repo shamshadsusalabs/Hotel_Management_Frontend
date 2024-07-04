@@ -1,0 +1,38 @@
+<div class="flex justify-between mb-4">
+  <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Add rate</button>
+  <button class="bg-gray-200 py-2 px-4 rounded hover:bg-gray-300">Filter</button>
+</div>
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white">
+    <thead>
+      <tr>
+        <th class="py-2 px-4 text-left">Room type</th>
+        <th class="py-2 px-4 text-left">Deals</th>
+        <th class="py-2 px-4 text-left">Cancellation policy</th>
+        <th class="py-2 px-4 text-left">Deal price</th>
+        <th class="py-2 px-4 text-left">Rate</th>
+        <th class="py-2 px-4 text-left">Availability</th>
+        <th class="py-2 px-4 text-left"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of rooms" class="border-t">
+        <td class="py-2 px-4">{{ room.type }}</td>
+        <td class="py-2 px-4">{{ room.deal }}</td>
+        <td class="py-2 px-4">{{ room.cancellation }}</td>
+        <td class="py-2 px-4">{{ room.dealPrice | currency }}</td>
+        <td class="py-2 px-4">{{ room.rate | currency }}</td>
+        <td class="py-2 px-4">
+          <span [ngClass]="{
+            'text-red-500': room.availability === 'Full',
+            'text-blue-500': room.availability !== 'Full'
+          }">{{ room.availability }}</span>
+        </td>
+        <td class="py-2 px-4">
+          <button class="text-blue-500 hover:text-blue-700">...</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

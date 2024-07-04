@@ -1,0 +1,48 @@
+<div class="p-6">
+  <div class="flex justify-between items-center mb-4">
+    <div>
+      <button class="px-4 py-2 text-white bg-blue-500 rounded">Ongoing</button>
+      <button class="px-4 py-2 text-gray-600 bg-gray-100 rounded">Finished</button>
+    </div>
+    <div>
+      <button class="px-4 py-2 text-white bg-blue-500 rounded mr-2">Add deal</button>
+      <button class="px-4 py-2 text-gray-600 bg-gray-100 rounded">Filter</button>
+    </div>
+  </div>
+
+  <table class="min-w-full bg-white">
+    <thead class="bg-gray-50">
+      <tr>
+        <th class="py-2 text-left text-gray-600">Reference number</th>
+        <th class="py-2 text-left text-gray-600">Deal name</th>
+        <th class="py-2 text-left text-gray-600">Reservations left</th>
+        <th class="py-2 text-left text-gray-600">End date</th>
+        <th class="py-2 text-left text-gray-600">Room type</th>
+        <th class="py-2 text-left text-gray-600">Status</th>
+        <th class="py-2 text-left text-gray-600"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let deal of deals" class="border-b">
+        <td class="py-2 px-4">{{ deal.referenceNumber }}</td>
+        <td class="py-2 px-4">{{ deal.dealName }}</td>
+        <td class="py-2 px-4">{{ deal.reservationsLeft }}</td>
+        <td class="py-2 px-4">{{ deal.endDate }}</td>
+        <td class="py-2 px-4">{{ deal.roomType }}</td>
+        <td class="py-2 px-4">
+          <span [ngClass]="{
+            'text-blue-500 bg-blue-100 px-2 py-1 rounded': deal.status === 'Ongoing',
+            'text-red-500 bg-red-100 px-2 py-1 rounded': deal.status === 'Full',
+            'text-gray-500 bg-gray-100 px-2 py-1 rounded': deal.status === 'Inactive',
+            'text-green-500 bg-green-100 px-2 py-1 rounded': deal.status === 'New'
+          }">
+            {{ deal.status }}
+          </span>
+        </td>
+        <td class="py-2 px-4 text-right">
+          <button class="text-gray-600 hover:text-gray-900">...</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,54 @@
+/* Tailwind CSS classes are used here. Add any additional custom styles if needed. */
+
+.btn-primary {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-500 text-white font-bold py-2 px-4 ml-2 rounded hover:bg-gray-700;
+}
+
+.btn-filter {
+  @apply bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded hover:bg-gray-300;
+}
+
+.input-search {
+  @apply border border-gray-300 rounded-lg py-2 px-4 mt-2 md:mt-0;
+}
+
+.status {
+  @apply px-2 py-1 rounded-full text-sm font-medium;
+}
+
+.status-clean {
+  @apply bg-green-200 text-green-800;
+}
+
+.status-dirty {
+  @apply bg-red-200 text-red-800;
+}
+
+.status-inspected {
+  @apply bg-yellow-200 text-yellow-800;
+}
+
+.status-pickup {
+  @apply bg-orange-200 text-orange-800;
+}
+
+.btn-more {
+  @apply bg-gray-200 text-gray-700 py-1 px-3 rounded hover:bg-gray-300;
+}
+
+.btn-prev,
+.btn-next {
+  @apply bg-gray-200 text-gray-700 py-2 px-4 rounded hover:bg-gray-300;
+}
+
+.btn-page {
+  @apply bg-gray-100 text-gray-700 py-2 px-3 rounded hover:bg-gray-200;
+}
+
+.btn-page.active {
+  @apply bg-blue-500 text-white;
+}
